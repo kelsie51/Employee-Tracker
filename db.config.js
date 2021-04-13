@@ -4,8 +4,8 @@ const mysql = require('mysql');
 const dbConn = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : '?',
-  database : 'db_business'
+  password : '6Lbgummy?',
+  database : 'db_employee_tracker'
 });
 dbConn.connect(function(err) {
   if (err) throw err;
@@ -16,7 +16,23 @@ dbConn.connect(function(err) {
 dbConn.query('SELECT * FROM employee', function(err, rows, fields)   
 {  
   if (err) throw err;  
+  
+  console.log(rows[0]);  
 
+});  
+
+dbConn.query('SELECT * FROM role', function(err, rows, fields)   
+{  
+  if (err) throw err;  
+  
+  console.log(rows[0]);  
+
+});  
+
+dbConn.query('SELECT * FROM department', function(err, rows, fields)   
+{  
+  if (err) throw err;  
+  
   console.log(rows[0]);  
 
 });  
