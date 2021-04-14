@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const dbConn = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : '6Lbgummy?',
+  password : '?',
   database : 'db_employee_tracker'
 });
 dbConn.connect(function(err) {
@@ -12,7 +12,7 @@ dbConn.connect(function(err) {
   console.log("Database Connected!");
 });
 
-
+/*
 dbConn.query('SELECT * FROM employee', function(err, rows, fields)   
 {  
   if (err) throw err;  
@@ -37,6 +37,7 @@ dbConn.query('SELECT * FROM department', function(err, rows, fields)
 
 });  
 
-dbConn.end();  
+
+dbConn.end();  */
 
 module.exports = dbConn;
