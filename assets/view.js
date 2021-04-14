@@ -12,7 +12,7 @@ function viewData() {
             choices: ["View all Employees",
                 "View Employees by Department",
                 "View Departments",
-                "View Positions",
+                "View Roles",
                 "Go Back To The Main Menu"]
         }).then(function (answer) {
             if (answer.view === "View all Employees") {

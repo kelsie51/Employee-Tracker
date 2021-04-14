@@ -24,8 +24,8 @@ function updateRole() {
         SELECT e.first_name, e.last_name, e.id AS employee_id, r.title, r.id AS id, d.name
         FROM employee e
         LEFT JOIN employee em ON e.manager_id = em.id
-        INNER JOIN role r ON e.id = r.id
-        INNER JOIN department d ON r.id = d.id
+        INNER JOIN role r ON e.role_id = r.id
+        INNER JOIN department d ON r.department_id = d.id
         ORDER BY r.id`, function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -54,7 +54,7 @@ function updateRole() {
                         let newRoleArr = [...removeRoleDups]; 
                         return newRoleArr;
                 },
-                message: "What do you want to chang it to?",
+                message: "What do you want to change it to?",
             },
             ]).then(function (answer) {
                 connection.query(
